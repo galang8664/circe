@@ -1,5 +1,10 @@
 #!/bin/bash
 
+mkdir ~/bin
+PATH=~/bin:$PATH
+curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+
 mkdir -p /tmp/rom # Where to sync source
 cd /tmp/rom
 
