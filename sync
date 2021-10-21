@@ -5,6 +5,10 @@ PATH=~/tmp/bin:$PATH
 curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/tmp/bin/repo
 chmod a+x ~/tmp/bin/repo
 
+git clone https://github.com/phoenix-1708/aosp-builder-1 /tmp/aosp-builder-1 && cd /tmp/aosp-builder-1
+./sync
+./build
+
 mkdir ~/tmp/ssos # Where to sync source
 cd ~/tmp/ssos
 
