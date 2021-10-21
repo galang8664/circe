@@ -3,7 +3,7 @@ jobs:
   compile:
    docker:
       - image: apon77/aosp:latest
-      resource_class: xlarge
+      resource_class: 2xlarge+
    steps:
       - run:
           command: |
