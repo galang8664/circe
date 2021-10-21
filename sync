@@ -1,12 +1,12 @@
 #!/bin/bash
 
-mkdir ~/tmp/bin
-PATH=~/tmp/bin:$PATH
-curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/tmp/bin/repo
-chmod a+x ~/tmp/bin/repo
+mkdir ~/bin
+PATH=~/bin:$PATH
+curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
 
-mkdir ~/tmp/ssos # Where to sync source
-cd ~/tmp/ssos
+mkdir ~/ssos # Where to sync source
+cd ~/ssos
 
 # Repo init command, that -device,-mips,-darwin,-notdefault part will save you more time and storage to sync, add more according to your rom and choice. Optimization is welcomed! Let's make it quit, and with depth=1 so that no unnecessary things.
 repo init -q --no-repo-verify --depth=1 -u https://github.com/ShapeShiftOS/android_manifest.git -b android_11 -g default,-device,-mips,-darwin,-notdefault
