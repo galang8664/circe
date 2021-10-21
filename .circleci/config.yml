@@ -10,7 +10,8 @@ jobs:
            git config --global user.name "phoenix-1708"
            git config --global user.email "harikumar1708@gmail.com"
            git config --global color.ui true
-           git clone https://github.com/phoenix-1708/scripts bscripts && cd bscripts && bash setup/android_build_env.sh && cd ..
+           git clone https://github.com/akhilnarang/scripts bscripts && cd bscripts && bash setup/android_build_env.sh && cd ..
+           
            
            
 workflows:
@@ -18,3 +19,4 @@ workflows:
   cooking:
     jobs:
       - compile
+# git clone https://github.com/phoenix-1708/scripts bscripts && cd bscripts && bash setup/android_build_env.sh && cd ..
