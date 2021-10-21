@@ -11,9 +11,6 @@ jobs:
            git config --global user.email "harikumar1708@gmail.com"
            git config --global color.ui true
            git clone https://github.com/phoenix-1708/scripts bscripts && cd bscripts && bash setup/android_build_env.sh && cd ..
-           git clone https://github.com/phoenix-1708/aosp-builder-1 && cd aosp-builder-1
-           ./sync
-           ./build
            
            
 workflows:
