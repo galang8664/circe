@@ -5,7 +5,7 @@ cd ~/ssos # Depends on where source got synced
 source build/envsetup.sh
 lunch ssos_tissot-userdebug
 # export PATH="$HOME/Kernel/proton-clang/bin:$PATH"
-export CCACHE_DIR=~/ccache
+export CCACHE_DIR=~/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
 ccache -M 50G # It took only 6.4GB for mido
@@ -52,5 +52,5 @@ make test-api-stubs-docs || echo no problem
 make bacon -j2 | tee log.txt \
 	&& send_zip=$(up out/target/product/tissot/*zip) && tg $id "Build Succeed!
 $send_zip" \
-	|| tmate -S /ssos/tmate.sock new-session -d && tmate -S /ssos/tmate.sock wait tmate-ready && send_shell=$(tmate -S /ssos/tmate.sock display -p '#{tmate_ssh}') && tg $id "Build Failed" && tg $id "$send_shell" && ccache -s
+	|| tmate -S /tmp/tmate.sock new-session -d && tmate -S /tmp/tmate.sock wait tmate-ready && send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}') && tg $id "Build Failed" && tg $id "$send_shell" && ccache -s
 ccache -s # Let's print ccache statistics finally
