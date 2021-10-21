@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ~/ssos # Depends on where source got synced
+cd ~/tmp/ssos # Depends on where source got synced
 
 # Normal build steps
 source build/envsetup.sh
